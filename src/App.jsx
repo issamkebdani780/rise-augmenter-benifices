@@ -13,6 +13,7 @@ import Tarifs from './componenets/tarifs';
 import Faq from './componenets/faq';
 import FormLead from './componenets/formlead';
 import Header from './componenets/Header';
+import Footer from './componenets/Footer';
 
 // Scroll to top on route change
 const ScrollToTop = () => {
@@ -53,8 +54,8 @@ function App() {
               <FormLead />
             </>
           } />
-          {/* Add more routes as needed */}
         </Routes>
+        <Footer />
       </div>
     </Router>
   );

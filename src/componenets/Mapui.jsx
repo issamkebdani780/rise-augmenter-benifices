@@ -200,7 +200,7 @@ const MapUI = () => {
   );
 
   return (
-    <div className={`w-full min-h-[400px] ${isMobile ? 'flex flex-col gap-3' : 'flex flex-row gap-4 h-full'}`}>
+    <div className={`w-full min-h-[300px] ${isMobile ? 'flex flex-col gap-3' : 'flex flex-row gap-4 h-[300px]'}`}>
 
       {/* ── Desktop: sidebar LEFT ── Mobile: hidden here, shown below map ── */}
       {!isMobile && (
@@ -213,7 +213,7 @@ const MapUI = () => {
       <div
         ref={wrapRef}
         className="relative flex-1 rounded-3xl overflow-hidden bg-slate-50 dark:bg-slate-950 border border-slate-100 dark:border-slate-800"
-        style={isMobile ? { aspectRatio: '4/3', minHeight: 220 } : { minHeight: 400 }}
+        style={isMobile ? { aspectRatio: '4/3', minHeight: 220 } : { minHeight: 300 }}
       >
         <svg ref={svgRef} className="w-full h-full block" />
 

@@ -1,6 +1,6 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import { ArrowRight, CheckCircle, TrendingUp, DollarSign, Package, Activity, MapPin, AlertCircle, ShoppingBag, Plus, Trash2 } from 'lucide-react';
+import { ArrowRight, CheckCircle, TrendingUp, DollarSign, Package, Activity, MapPin, AlertCircle, ShoppingBag, Plus, Trash2, ShoppingCart, Rocket, PlayCircle, ShieldCheck, Zap } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
 
 const Hero = () => {
@@ -40,28 +40,30 @@ const Hero = () => {
     };
 
     return (
-        <section className="relative pt-32 pb-20 lg:pt-48 lg:pb-32 overflow-hidden bg-white dark:bg-slate-950 transition-colors duration-500">
-            {/* Background Decor - Blue Gradient Background like RiseManager */}
-            <div className="absolute inset-0 bg-gradient-to-br from-blue-50/40 via-transparent to-white dark:from-blue-900/10 dark:via-transparent dark:to-slate-950 pointer-events-none" />
-            
-            <div className="absolute top-0 left-0 w-[500px] h-[500px] bg-blue-400/10 dark:bg-blue-400/5 rounded-full blur-[120px] pointer-events-none" />
-            <div className="absolute top-0 right-0 -translate-y-1/2 translate-x-1/4 w-[600px] h-[600px] bg-primary/10 dark:bg-primary/5 rounded-full blur-[120px] pointer-events-none" />
-            <div className="absolute bottom-0 left-0 translate-y-1/2 -translate-x-1/4 w-[500px] h-[500px] bg-blue-400/10 dark:bg-blue-400/5 rounded-full blur-[100px] pointer-events-none" />
+        <section className="relative min-h-screen pt-32 pb-20 overflow-hidden transition-colors duration-500">
+            <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full h-full pointer-events-none z-0">
+                <div className="absolute top-[-10%] left-[-10%] w-[50%] h-[50%] bg-primary/10 dark:bg-primary/5 blur-[120px] rounded-full" />
+                <div className="absolute bottom-[10%] right-[-5%] w-[40%] h-[40%] bg-blue-500/10 dark:bg-blue-500/5 blur-[100px] rounded-full" />
+            </div>
 
             <div className="container mx-auto px-6 relative z-10">
-                <div className="grid lg:grid-cols-2 gap-16 lg:gap-12 items-center">
+                <div className="flex flex-col lg:flex-row items-center gap-16">
                     {/* Left Column: Content */}
-                    <div className="flex flex-col items-start text-start max-w-2xl mx-auto lg:mx-0">
+                    <div className="flex-1 text-center lg:text-start">
+                        <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 border border-primary/20 text-primary text-xs font-bold mb-6">
+                            <Zap className="w-3 h-3 fill-current" />
+                            NOUVELLE VERSION 2.0
+                        </div>
                         {/* Title */}
                         <h1
-                            className="text-5xl lg:text-[64px] font-extrabold text-slate-900 dark:text-white mb-8 leading-[1.1] animate-slide-up tracking-tight"
+                            className="text-4xl md:text-6xl lg:text-7xl font-black leading-[1.1] mb-6 text-slate-900 dark:text-white animate-slide-up"
                             style={{ animationDelay: '0.1s' }}
                             dangerouslySetInnerHTML={{ __html: t('hero_title') }}
                         />
 
                         {/* Subtitle */}
                         <p
-                            className="text-lg lg:text-xl text-slate-500 dark:text-slate-400 mb-12 max-w-xl animate-slide-up font-medium leading-relaxed"
+                            className="text-lg md:text-xl mb-10 leading-relaxed max-w-2xl mx-auto lg:mx-0 text-slate-600 dark:text-slate-400 animate-slide-up"
                             style={{ animationDelay: '0.2s' }}
                         >
                             {t('hero_subtitle')}
@@ -69,41 +71,42 @@ const Hero = () => {
 
                         {/* CTAs */}
                         <div
-                            className="flex flex-col sm:flex-row items-center gap-4 mb-12 animate-slide-up w-full sm:w-auto"
+                            className="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 mb-12 animate-slide-up"
                             style={{ animationDelay: '0.3s' }}
                         >
                             <Link
                                 to="/signup"
-                                className="w-full sm:w-auto bg-primary hover:bg-primary-hover text-white px-8 py-4 rounded-2xl font-black text-lg transition-all hover:scale-105 shadow-xl shadow-primary/30 flex items-center justify-center gap-2"
+                                className="w-full sm:w-auto px-8 py-4 bg-primary text-white font-black rounded-2xl shadow-xl shadow-primary/30 flex items-center justify-center gap-2 hover:scale-105 transition-all"
                             >
+                                <Rocket className="w-5 h-5" />
                                 {t('cta_trial')}
                             </Link>
                             <Link
                                 to="/live"
-                                className="w-full sm:w-auto bg-white dark:bg-slate-900 text-primary dark:text-primary border border-slate-100 dark:border-slate-800 px-8 py-4 rounded-2xl font-black text-lg transition-all flex items-center justify-center gap-2 hover:bg-slate-50 dark:hover:bg-slate-800 group"
+                                className="w-full sm:w-auto px-8 py-4 border rounded-2xl flex items-center justify-center gap-2 transition-all font-bold bg-white border-slate-200 text-slate-900 hover:bg-slate-50 dark:bg-slate-900 dark:border-slate-800 dark:text-white dark:hover:bg-slate-800"
                             >
-                                {t('cta_live')} <ArrowRight size={18} className="transition-transform ltr:group-hover:translate-x-1 rtl:group-hover:-translate-x-1 rtl:rotate-180" />
+                                <PlayCircle className="w-5 h-5 text-primary" />
+                                {t('cta_live')}
                             </Link>
                         </div>
 
                         {/* Reassurance */}
-                        <div className="flex flex-wrap gap-x-8 gap-y-3 animate-slide-up" style={{ animationDelay: '0.4s' }}>
-                            <div className="flex items-center gap-2 text-slate-400 dark:text-slate-500">
-                                <CheckCircle size={16} className="text-primary" />
-                                <span className="text-xs font-bold uppercase tracking-wider">{t("hero_reassurance_1")}</span>
+                        <div className="flex flex-wrap items-center justify-center lg:justify-start gap-6 text-slate-400 dark:text-slate-500 animate-slide-up" style={{ animationDelay: '0.4s' }}>
+                            <div className="flex items-center gap-2 group cursor-help">
+                                <ShieldCheck className="w-5 h-5 text-primary group-hover:scale-110 transition-transform" />
+                                <span className="text-sm font-medium">{t('hero_reassurance_1')}</span>
                             </div>
-                            <div className="flex items-center gap-2 text-slate-400 dark:text-slate-500">
-                                <TrendingUp size={16} className="text-primary" />
-                                <span className="text-xs font-bold uppercase tracking-wider">{t("hero_reassurance_2")}</span>
+                            <div className="flex items-center gap-2 group cursor-help">
+                                <Zap className="w-5 h-5 text-primary group-hover:scale-110 transition-transform" />
+                                <span className="text-sm font-medium">{t('hero_reassurance_2')}</span>
                             </div>
                         </div>
                     </div>
 
-                    {/* Right Column: Visual Dashboard */}
-                    <div className="relative animate-slide-up" style={{ animationDelay: '0.5s' }}>
-                        <div className="relative">
-                            {/* Dashboard Container */}
-                            <div className="rounded-[2.5rem] overflow-hidden bg-white dark:bg-slate-900 border-4 border-slate-100 dark:border-slate-800 shadow-2xl transition-all duration-700 hover:scale-[1.02] group">
+                        <div className="flex-1 w-full relative pt-8 lg:pt-0 animate-slide-up" style={{ animationDelay: '0.5s' }}>
+                            <div className="relative">
+                                {/* Dashboard Container */}
+                                <div className="border rounded-[32px] overflow-hidden shadow-2xl relative transition-all duration-500 hover:shadow-primary/10 group/card bg-white border-slate-100 shadow-slate-200/50 dark:bg-slate-900 dark:border-slate-800 dark:shadow-black/50">
                                 {/* Header Bar */}
                                 <div className="h-12 bg-slate-50 dark:bg-slate-800/50 border-b border-slate-100 dark:border-slate-800 flex items-center justify-between px-6">
                                     <div className="flex gap-1.5">
@@ -121,12 +124,12 @@ const Hero = () => {
                                 <div className="p-6 xs:p-10 space-y-8">
                                     {/* Top Stats Grid */}
                                     <div className="grid grid-cols-2 gap-4 xs:gap-6">
-                                        <div className="glass-card p-5 xs:p-6 rounded-3xl relative overflow-hidden group/stat cursor-pointer active:scale-95 transition-all">
+                                        <div className="border p-5 xs:p-6 rounded-2xl relative overflow-hidden group/stat cursor-pointer active:scale-95 transition-colors bg-slate-50 border-slate-100 hover:bg-slate-200/50 dark:bg-slate-950 dark:border-slate-800 dark:hover:bg-slate-800/50">
                                             <div className="absolute top-0 right-0 p-4 opacity-10 group-hover/stat:opacity-40 transition-all group-hover/stat:scale-110">
                                                 <DollarSign size={40} className="text-primary" />
                                             </div>
-                                            <p className="text-[10px] font-black text-slate-400 uppercase tracking-widest mb-2">{t('dashboard_ca')}</p>
-                                            <h3 className="text-xl xs:text-2xl font-black text-slate-900 dark:text-white tabular-nums tracking-tight">
+                                            <p className="text-[10px] font-black text-slate-400 dark:text-slate-500 uppercase tracking-widest mb-2">{t('dashboard_ca')}</p>
+                                            <h3 className="text-xl xs:text-2xl font-black text-primary tracking-tight">
                                                 {revenue.toLocaleString()} <span className="text-xs">DA</span>
                                             </h3>
                                             <div className="mt-4 flex items-center gap-1.5 text-emerald-500 font-bold text-[10px]">
@@ -134,12 +137,12 @@ const Hero = () => {
                                             </div>
                                         </div>
 
-                                        <div className="glass-card p-5 xs:p-6 rounded-3xl relative overflow-hidden group/stat cursor-pointer active:scale-95 transition-all">
+                                        <div className="border p-5 xs:p-6 rounded-2xl relative overflow-hidden group/stat cursor-pointer active:scale-95 transition-colors bg-slate-50 border-slate-100 hover:bg-slate-200/50 dark:bg-slate-950 dark:border-slate-800 dark:hover:bg-slate-800/50">
                                             <div className="absolute top-0 right-0 p-4 opacity-10 group-hover/stat:opacity-40 transition-all group-hover/stat:scale-110">
                                                 <Activity size={40} className="text-emerald-500" />
                                             </div>
-                                            <p className="text-[10px] font-black text-slate-400 uppercase tracking-widest mb-2">{t('dashboard_net_profit')}</p>
-                                            <h3 className="text-xl xs:text-2xl font-black text-emerald-600 dark:text-emerald-400 tabular-nums tracking-tight">
+                                            <p className="text-[10px] font-black text-slate-400 dark:text-slate-500 uppercase tracking-widest mb-2">{t('dashboard_net_profit')}</p>
+                                            <h3 className="text-xl xs:text-2xl font-black text-emerald-500 tracking-tight">
                                                 {profit.toLocaleString()} <span className="text-xs">DA</span>
                                             </h3>
                                             <div className="mt-4 flex items-center gap-1.5 text-emerald-500 font-bold text-[10px]">
@@ -163,7 +166,7 @@ const Hero = () => {
                                         {items.map((item) => (
                                             <div 
                                                 key={item.id} 
-                                                className={`flex items-center justify-between p-3 xs:p-4 rounded-2xl bg-slate-50 dark:bg-slate-800/30 border border-slate-100 dark:border-slate-800 transition-all hover:bg-white dark:hover:bg-slate-800 hover:border-${item.color}-500/20 hover:shadow-xl group/row cursor-pointer`}
+                                                className={`flex items-center justify-between p-3 xs:p-4 rounded-2xl border transition-colors bg-slate-50 border-slate-100 hover:bg-slate-200/50 dark:bg-slate-950 dark:border-slate-800 dark:hover:bg-slate-800/50 group/row cursor-pointer`}
                                             >
                                                 <div className="flex items-center gap-3 xs:gap-4">
                                                     <div className={`w-9 h-9 xs:w-10 xs:h-10 rounded-xl bg-${item.color}-100 dark:bg-${item.color}-900/30 flex items-center justify-center text-${item.color}-600 transition-transform group-hover/row:scale-110`}>
@@ -196,6 +199,19 @@ const Hero = () => {
                             {/* Decorative Elements */}
                             <div className="absolute -bottom-6 -right-6 w-32 h-32 bg-primary/10 rounded-full blur-3xl -z-10" />
                             <div className="absolute -top-6 -left-6 w-32 h-32 bg-blue-400/10 rounded-full blur-3xl -z-10" />
+                            
+                            {/* Floating Element */}
+                            <div className="absolute -right-8 top-1/4 animate-float hidden lg:block z-20 p-4 rounded-2xl shadow-2xl border cursor-pointer transition-shadow hover:shadow-primary/30 bg-white border-slate-100 text-slate-900 shadow-slate-200/50 dark:bg-primary dark:border-white/20 dark:text-white dark:shadow-primary/40">
+                                <div className="flex items-center gap-3">
+                                    <div className="w-10 h-10 bg-emerald-100 dark:bg-emerald-900/30 rounded-full flex items-center justify-center text-emerald-500">
+                                        <ShoppingCart size={20} />
+                                    </div>
+                                    <div>
+                                        <p className="text-xs font-black text-slate-900 dark:text-white">Nouvelle Commande</p>
+                                        <p className="text-[10px] text-slate-400 dark:text-white/70 font-bold">Il y a 2 min • Alger</p>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>

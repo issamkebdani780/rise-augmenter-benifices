@@ -43,7 +43,7 @@ const CasReal = () => {
                             <div className="flex items-start gap-3 p-4 bg-red-50/50 dark:bg-red-900/10 rounded-2xl border border-red-100/50 dark:border-red-900/20">
                                 <XCircle className="text-red-500 shrink-0 mt-0.5" size={18} />
                                 <p className="text-sm font-medium text-slate-500 dark:text-slate-400">
-                                    L'illusion du volume cache un gouffre financier.
+                                    {t('cas_prod_a_footer')}
                                 </p>
                             </div>
                         </div>
@@ -68,7 +68,7 @@ const CasReal = () => {
                             <div className="flex items-start gap-3 p-4 bg-primary/10 rounded-2xl border border-primary/20">
                                 <CheckCircle2 className="text-primary shrink-0 mt-0.5" size={18} />
                                 <p className="text-sm font-black text-primary">
-                                    Optimisation maximale de la rentabilité.
+                                    {t('cas_prod_b_footer')}
                                 </p>
                             </div>
                         </div>

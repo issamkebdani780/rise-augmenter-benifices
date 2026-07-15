@@ -161,5 +161,11 @@
   "footer_privacy": "Privacy Policy",
   "footer_cgv": "T&C",
   "Support_footer": "Support",
-  "Email": "Email"
+  "Email": "Email",
+  "footer_tagline": "The #1 Operating System",
+  "footer_col_platform": "Platform",
+  "footer_col_ecosystem": "Ecosystem",
+  "footer_col_contact": "Direct Contact",
+  "cas_prod_a_footer": "The illusion of volume hides a financial abyss.",
+  "cas_prod_b_footer": "Maximum optimization of profitability."
 }

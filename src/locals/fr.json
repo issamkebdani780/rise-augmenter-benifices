@@ -161,5 +161,11 @@
     "footer_privacy": "Politique de Confidentialité",
     "footer_cgv": "CGV",
     "Support_footer": "Support",
-    "Email": "Email"
+    "Email": "Email",
+    "footer_tagline": "Le système d'exploitation n°1",
+    "footer_col_platform": "Plateforme",
+    "footer_col_ecosystem": "Écosystème",
+    "footer_col_contact": "Contact Direct",
+    "cas_prod_a_footer": "L'illusion du volume cache un gouffre financier.",
+    "cas_prod_b_footer": "Optimisation maximale de la rentabilité."
 }

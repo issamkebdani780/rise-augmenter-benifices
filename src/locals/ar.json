@@ -161,5 +161,11 @@
     "footer_privacy": "سياسة الخصوصية",
     "footer_cgv": "الشروط العامة",
     "Support_footer": "الدعم",
-    "Email": "البريد الإلكتروني"
+    "Email": "البريد الإلكتروني",
+    "footer_tagline": "نظام التشغيل رقم 1",
+    "footer_col_platform": "المنصة",
+    "footer_col_ecosystem": "النظام البيئي",
+    "footer_col_contact": "اتصال مباشر",
+    "cas_prod_a_footer": "وهم حجم المبيعات يخفي هاوية مالية.",
+    "cas_prod_b_footer": "التحسين الأقصى للربحية."
 }

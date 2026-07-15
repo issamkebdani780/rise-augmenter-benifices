@@ -29,7 +29,7 @@ const Footer = () => {
                             </span>
                         </Link>
                         <p className="text-slate-500 dark:text-slate-400 text-lg font-medium leading-relaxed max-w-md">
-                            {t("Le système d'exploitation n°1")}
+                            {t('footer_tagline')}
                         </p>
                         <div className="flex items-center gap-3">
                             <a href="https://www.facebook.com/risecartgroup" className="w-10 h-10 rounded-xl bg-slate-50 dark:bg-slate-900 flex items-center justify-center text-slate-400 dark:text-slate-500 hover:bg-blue-600 dark:hover:bg-blue-600 hover:text-white transition-all border border-slate-100 dark:border-slate-800 group shadow-sm transition-all hover:-translate-y-1">
@@ -50,7 +50,7 @@ const Footer = () => {
                     <div className="lg:col-span-7 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12 text-reveal-container">
                         {/* Plateforme Column */}
                         <div className="space-y-6">
-                            <div className="text-[10px] font-black text-primary uppercase tracking-[0.2em]">{t("Plateforme")}</div>
+                            <div className="text-[10px] font-black text-primary uppercase tracking-[0.2em]">{t('footer_col_platform')}</div>
                             <ul className="space-y-4">
                                 {navLinks.map(link => (
                                     <li key={link.name}>
@@ -62,7 +62,7 @@ const Footer = () => {
 
                         {/* Ecosystème Column */}
                         <div className="space-y-6">
-                            <div className="text-[10px] font-black text-primary uppercase tracking-[0.2em]">{t("Écosystème")}</div>
+                            <div className="text-[10px] font-black text-primary uppercase tracking-[0.2em]">{t('footer_col_ecosystem')}</div>
                             <ul className="space-y-4">
                                 {['RiseCart', 'RiseConfirm', 'FBR Network', 'RiseAcademy', 'RisePay'].map(link => (
                                     <li key={link}>
@@ -77,7 +77,7 @@ const Footer = () => {
 
                         {/* Contact Direct Column */}
                         <div className="space-y-6">
-                            <div className="text-[10px] font-black text-primary uppercase tracking-[0.2em]">{t("Contact Direct")}</div>
+                            <div className="text-[10px] font-black text-primary uppercase tracking-[0.2em]">{t('footer_col_contact')}</div>
                             <div className="flex flex-col gap-4">
                                 <a
                                     href="https://maps.app.goo.gl/AZj6LiEoxejWRuq5A"
@@ -119,10 +119,10 @@ const Footer = () => {
                 {/* Trust Signals Integration */}
                 <div className="grid grid-cols-2 lg:grid-cols-4 gap-8 py-10 border border-slate-100 dark:border-slate-800 bg-slate-50/50 dark:bg-slate-900/50 rounded-[32px] px-8 mb-12">
                     {[
-                        { label: "Intégrations Natives", icon: "M13 10V3L4 14h7v7l9-11h-7z" },
-                        { label: "Support Local (DZ)", icon: "M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" },
-                        { label: "Données Sécurisées", icon: "M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" },
-                        { label: "Infrastructure Sérieuse", icon: "M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5" }
+                        { labelKey: "footer_signal_1", icon: "M13 10V3L4 14h7v7l9-11h-7z" },
+                        { labelKey: "footer_signal_2", icon: "M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" },
+                        { labelKey: "footer_signal_3", icon: "M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" },
+                        { labelKey: "footer_signal_4", icon: "M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5" }
                     ].map((signal, i) => (
                         <div key={i} className="flex flex-col items-center lg:items-start gap-2 group">
                             <div className="text-primary/70 group-hover:text-primary dark:text-primary-light/70 dark:group-hover:text-primary-light transition-colors">
@@ -130,7 +130,7 @@ const Footer = () => {
                                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d={signal.icon} />
                                 </svg>
                             </div>
-                            <div className="text-[11px] font-black text-slate-800 dark:text-slate-200 uppercase tracking-widest text-center lg:text-left">{t(signal.label)}</div>
+                            <div className="text-[11px] font-black text-slate-800 dark:text-slate-200 uppercase tracking-widest text-center lg:text-left">{t(signal.labelKey)}</div>
                         </div>
                     ))}
                 </div>
@@ -138,12 +138,12 @@ const Footer = () => {
                 {/* Footnotes */}
                 <div className="flex flex-col md:flex-row justify-between items-center gap-8">
                     <div className="text-[11px] font-bold text-slate-400 dark:text-slate-500">
-                        &copy; {new Date().getFullYear()} {t("Propulsé par")}
+                        &copy; {new Date().getFullYear()} {t('footer_powered_by')} RiseGroup
                     </div>
                     <div className="flex flex-wrap items-center justify-center gap-x-8 gap-y-2">
-                        <Link to="/mentions-legales" className="text-[11px] font-black text-slate-400 hover:text-primary dark:hover:text-primary-light transition-colors uppercase tracking-[0.1em]">{t("Mentions Légales")}</Link>
-                        <Link to="/politique-de-confidentialite" className="text-[11px] font-black text-slate-400 hover:text-primary dark:hover:text-primary-light transition-colors uppercase tracking-[0.1em]">{t("Politique de Confidentialité")}</Link>
-                        <Link to="/cgv" className="text-[11px] font-black text-slate-400 hover:text-primary dark:hover:text-primary-light transition-colors uppercase tracking-[0.1em]">{t("CGV")}</Link>
+                        <Link to="/mentions-legales" className="text-[11px] font-black text-slate-400 hover:text-primary dark:hover:text-primary-light transition-colors uppercase tracking-[0.1em]">{t('footer_legal')}</Link>
+                        <Link to="/politique-de-confidentialite" className="text-[11px] font-black text-slate-400 hover:text-primary dark:hover:text-primary-light transition-colors uppercase tracking-[0.1em]">{t('footer_privacy')}</Link>
+                        <Link to="/cgv" className="text-[11px] font-black text-slate-400 hover:text-primary dark:hover:text-primary-light transition-colors uppercase tracking-[0.1em]">{t('footer_cgv')}</Link>
                     </div>
                 </div>
             </div>

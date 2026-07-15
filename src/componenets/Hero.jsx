@@ -32,8 +32,8 @@ const Hero = () => {
     const addItem = () => {
         const newId = Math.max(0, ...items.map(i => i.id)) + 1;
         const types = [
-            { type: 'product', title: 'Nouveau Produit', subtitle: 'SKU: NEW-PROD', value: '+30% ROI', color: 'emerald' },
-            { type: 'campaign', title: 'Nouvelle Campagne', subtitle: 'Google Ads', value: '+12% ROI', color: 'blue' }
+            { type: 'product', title: t('dashboard_new_product_title'), subtitle: 'SKU: NEW-PROD', value: '+30% ROI', color: 'emerald' },
+            { type: 'campaign', title: t('dashboard_new_campaign_title'), subtitle: 'Google Ads', value: '+12% ROI', color: 'blue' }
         ];
         const randomType = types[Math.floor(Math.random() * types.length)];
         setItems(prev => [...prev, { ...randomType, id: newId }]);
@@ -52,7 +52,7 @@ const Hero = () => {
                     <div className="flex-1 text-center lg:text-start">
                         <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 border border-primary/20 text-primary text-xs font-bold mb-6">
                             <Zap className="w-3 h-3 fill-current" />
-                            NOUVELLE VERSION 2.0
+                            {t('hero_badge_new_version')}
                         </div>
                         {/* Title */}
                         <h1
@@ -146,7 +146,7 @@ const Hero = () => {
                                                 {profit.toLocaleString()} <span className="text-xs">DA</span>
                                             </h3>
                                             <div className="mt-4 flex items-center gap-1.5 text-emerald-500 font-bold text-[10px]">
-                                                <div className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse" /> {t("Optimisé")}
+                                                <div className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse" /> {t("dashboard_status_optimized")}
                                             </div>
                                         </div>
                                     </div>
@@ -154,7 +154,7 @@ const Hero = () => {
                                     {/* List Stats */}
                                     <div className="space-y-3 xs:space-y-4">
                                         <div className="flex items-center justify-between mb-2">
-                                            <p className="text-[10px] font-black text-slate-400 uppercase tracking-widest">{t("Analyses de performance")}</p>
+                                            <p className="text-[10px] font-black text-slate-400 uppercase tracking-widest">{t("dashboard_performance_analysis")}</p>
                                             <button 
                                                 onClick={addItem}
                                                 className="p-1.5 bg-primary/10 text-primary rounded-lg hover:bg-primary hover:text-white transition-all active:scale-90"
@@ -207,8 +207,8 @@ const Hero = () => {
                                         <ShoppingCart size={20} />
                                     </div>
                                     <div>
-                                        <p className="text-xs font-black text-slate-900 dark:text-white">Nouvelle Commande</p>
-                                        <p className="text-[10px] text-slate-400 dark:text-white/70 font-bold">Il y a 2 min • Alger</p>
+                                        <p className="text-xs font-black text-slate-900 dark:text-white">{t('dashboard_new_order_toast')}</p>
+                                        <p className="text-[10px] text-slate-400 dark:text-white/70 font-bold">{t('dashboard_new_order_toast_time')}</p>
                                     </div>
                                 </div>
                             </div>

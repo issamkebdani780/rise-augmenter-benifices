@@ -31,7 +31,7 @@ const DecisionRapide = () => {
                     <div className="text-center mb-16">
                         <div className="inline-flex items-center gap-2 px-4 py-2 bg-primary/10 text-primary rounded-full mb-8 animate-slide-up">
                             <Zap size={16} />
-                            <span className="text-xs font-black uppercase tracking-widest">Rapid Decisions</span>
+                            <span className="text-xs font-black uppercase tracking-widest">{t('decision_badge_rapid')}</span>
                         </div>
                         <h2 className="text-4xl lg:text-5xl font-black text-slate-900 dark:text-white mb-6 animate-slide-up">
                             {t('dec_title')}
